@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class Atleta {
     
-    ArrayList <String> telefones;
+    private ArrayList <String> telefones;
     private String nome;
     private Date dataNascimento;
     private Endereco endereco;
