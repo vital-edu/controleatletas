@@ -15,6 +15,7 @@ public class Judoca extends Atleta {
     
     private int totalVitorias;
     private int totalDerrotas;
+    private int totalEmpates;
     private int totalLutas;
     
     public Judoca(String nome) {
@@ -107,6 +108,14 @@ public class Judoca extends Atleta {
 
     public void setTotalLutas(int totalLutas) {
         this.totalLutas = totalLutas;
+    }
+
+    public int getTotalEmpates() {
+        return totalEmpates;
+    }
+
+    public void setTotalEmpates(int totalEmpates) {
+        this.totalEmpates = totalEmpates;
     }
     
 }
