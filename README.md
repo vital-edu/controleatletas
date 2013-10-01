@@ -15,7 +15,7 @@ Autores
 ------
 
 Paulo Meirelles <paulo@sofwarelivre.org>
-
+Eduardo Vital <vitaldu@gmail.com>
 
 Licença
 -------
