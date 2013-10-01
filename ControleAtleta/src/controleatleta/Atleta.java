@@ -22,6 +22,20 @@ public class Atleta {
         this.endereco = new Endereco();
     }
 
+    public Atleta(ArrayList<String> telefones, String nome, Date dataNascimento, Endereco endereco, Double altura, Double peso, String nomePai, String nomeMae, char sexo, String rg, String cpf) {
+        this.telefones = telefones;
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
+        this.endereco = endereco;
+        this.altura = altura;
+        this.peso = peso;
+        this.nomePai = nomePai;
+        this.nomeMae = nomeMae;
+        this.sexo = sexo;
+        this.rg = rg;
+        this.cpf = cpf;
+    }
+    
     public Double getAltura() {
         return altura;
     }
