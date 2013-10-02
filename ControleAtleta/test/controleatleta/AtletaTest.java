@@ -63,14 +63,17 @@ public class AtletaTest {
     public void testGetEndereco() {
         Endereco mesmoEndereco;
         mesmoEndereco = new Endereco("Quadra X", "666", "Alvorada", "Sao Paulo", "SP", "Brasil", "-", "72000-000");
-        //mesmoEndereco = umEndereco;   //???
+        mesmoEndereco = umEndereco;   //???
+        //System.out.println(umAtleta + "<><><><><>"+ umAtleta.getEndereco());
         assertEquals(mesmoEndereco, umAtleta.getEndereco());
+        
     }
 
     @Test
     public void testSetEndereco() {
-        Endereco novoEndereco = new Endereco("Quadra Nula", "000", "Invisivel", "Cidade dos Bobos", "Vazio", "Inexistente", "*-*", "72666-000");
+        Endereco novoEndereco = new Endereco("Quadra X", "666", "Alvorada", "Sao Paulo", "SP", "Brasil", "-", "72000-000");
         umAtleta.setEndereco(novoEndereco);
+     
         assertEquals(novoEndereco, umAtleta.getEndereco());
     }
 
