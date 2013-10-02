@@ -14,7 +14,7 @@ Use o NetBeans para desenvolver algo baseado nele.
 Autores
 ------
 
-Paulo Meirelles <paulo@sofwarelivre.org>
+Paulo Meirelles <paulo@sofwarelivre.org><br>
 Eduardo Vital <vitaldu@gmail.com>
 
 Licença
