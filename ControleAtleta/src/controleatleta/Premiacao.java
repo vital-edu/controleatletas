@@ -4,6 +4,7 @@ public class Premiacao {
 
     private String titulo;
     private int ano;
+    private int colocacao;
 
     public Premiacao(String titulo, int ano) {
         this.titulo = titulo;
@@ -26,8 +27,16 @@ public class Premiacao {
         this.ano = ano;
     }
     
+      public int getColocacao() {
+        return colocacao;
+    }
+
+    public void setColocacao(int colocacao) {
+        this.colocacao = colocacao;
+    }
+    
     @Override
     public String toString() {
-        return this.ano + " - " + this.titulo;
+        return this.colocacao + "º lugar - " + this.ano + " - " + this.titulo;
     }
 }
