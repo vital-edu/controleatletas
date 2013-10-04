@@ -4,15 +4,16 @@ import java.util.ArrayList;
 
 public class Judoca extends Atleta {
 
-    private String modalidade;
     private String tecnica;
     private double forca;
     private double reflexo;
     private double resistencia;
     private double agilidade;
-    private int dan;
+    private String graduaçao;
     private String estilo;
-    
+    private String divisao;
+    private String classe;
+    private String categoria;
     private int totalVitorias;
     private int totalDerrotas;
     private int totalEmpates;
@@ -20,14 +21,6 @@ public class Judoca extends Atleta {
     
     public Judoca(String nome) {
         super(nome);
-    }
-
-    public String getModalidade() {
-        return modalidade;
-    }
-
-    public void setModalidade(String modalidade) {
-        this.modalidade = modalidade;
     }
 
     public String getTecnica() {
@@ -70,14 +63,6 @@ public class Judoca extends Atleta {
         this.agilidade = agilidade;
     }
 
-    public int getDan() {
-        return dan;
-    }
-
-    public void setDan(int dan) {
-        this.dan = dan;
-    }
-
     public String getEstilo() {
         return estilo;
     }
@@ -116,6 +101,38 @@ public class Judoca extends Atleta {
 
     public void setTotalEmpates(int totalEmpates) {
         this.totalEmpates = totalEmpates;
+    }
+
+    public String getGraduaçao() {
+        return graduaçao;
+    }
+
+    public void setGraduaçao(String graduaçao) {
+        this.graduaçao = graduaçao;
+    }
+
+    public String getDivisao() {
+        return divisao;
+    }
+
+    public void setDivisao(String divisao) {
+        this.divisao = divisao;
+    }
+
+    public String getClasse() {
+        return classe;
+    }
+
+    public void setClasse(String classe) {
+        this.classe = classe;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
     
 }
