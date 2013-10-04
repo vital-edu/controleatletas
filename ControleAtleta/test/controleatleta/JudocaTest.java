@@ -6,21 +6,26 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class JudocaTest {
+
     Judoca umJudoca;
     ArrayList<Premiacao> umaPremiacao;
-    
+
     @Before
     public void setUp() throws Exception {
-        umJudoca = new Judoca("Joao", 'a', 'o', 150.0, 80, 60, 2, 18, "2º Dan");
+        umJudoca = new Judoca('a', 'o', 150.0, 80, 60, 2, 18, "2º Dan", "Joao", 'm');
     }
 
     @Test
     public void testGetCategoria() {
-        assertEquals("a", this.umJudoca.getCategoria());
+        assertEquals('a', this.umJudoca.getCategoria());
     }
 
     @Test
     public void testSetCategoria() {
+        umJudoca.setCategoria('A');
+        assertEquals(umJudoca.getCategoria(), 'A');
+
+
     }
 
     @Test
@@ -30,6 +35,8 @@ public class JudocaTest {
 
     @Test
     public void testSetTotalDerrotas() {
+        umJudoca.setTotalDerrotas(80);
+        assertEquals(umJudoca.getTotalDerrotas(), 80);
     }
 
     @Test
@@ -39,7 +46,9 @@ public class JudocaTest {
 
     @Test
     public void testSetTotalEmpates() {
-        
+        umJudoca.setTotalEmpates(0);
+        assertEquals(umJudoca.getTotalEmpates(), 0);
+
     }
 
     @Test
@@ -49,15 +58,19 @@ public class JudocaTest {
 
     @Test
     public void testSetEnvergadura() {
+        umJudoca.setEnvergadura(100.0);
+        assertEquals(umJudoca.getEnvergadura(), 100.0, 0.01);
     }
 
     @Test
     public void testGetEstilo() {
-        assertEquals("o", this.umJudoca.getEstilo());
+        assertEquals('o', this.umJudoca.getEstilo());
     }
 
     @Test
     public void testSetEstilo() {
+        umJudoca.setEstilo('d');
+        assertEquals(umJudoca.getEstilo(), 'd');
     }
 
     @Test
@@ -67,33 +80,40 @@ public class JudocaTest {
 
     @Test
     public void testSetTotalLutas() {
-        
+        umJudoca.setTotalLutas(100);
+        assertEquals(umJudoca.getTotalLutas(), 100);
     }
 
     @Test
     public void testGetTotalVitorias() {
-        assertEquals(40, this.umJudoca.getTotalVitorias();
+        assertEquals(60, this.umJudoca.getTotalVitorias());
     }
 
     @Test
     public void testSetTotalVitorias() {
+        umJudoca.setTotalVitorias(13);
+        assertEquals(umJudoca.getTotalVitorias(), 13);
     }
 
     @Test
     public void testObterCategoriaPesoNome_0args() {
-        
+        assertEquals("Ligeiro", Judoca.obterCategoriaPesoNome('M', 60.0));
     }
 
     @Test
     public void testObterCategoriaPesoNome_char_double() {
-        
+        assertEquals("Meio Medio", Judoca.obterCategoriaPesoNome('F', 60.0));
+
     }
 
     @Test
     public void testGetGraduaçao() {
+        assertEquals("2º Dan", umJudoca.getGraduaçao());
     }
 
     @Test
     public void testSetGraduaçao() {
+        umJudoca.setGraduaçao("10º Dan");
+        assertEquals(umJudoca.getGraduaçao(), "10º Dan");
     }
 }
