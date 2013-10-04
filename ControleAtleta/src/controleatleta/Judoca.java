@@ -82,14 +82,6 @@ public class Judoca extends Atleta {
         this.totalVitorias = vitorias;
     }
 
-    public int getTotalVitoriasNocaute() {
-        return totalVitoriasNocaute;
-    }
-
-    public void setTotalVitoriasNocaute(int vitoriasNocaute) {
-        this.totalVitoriasNocaute = vitoriasNocaute;
-    }
-
     public String obterCategoriaPesoNome() {
         return obterCategoriaPesoNome(this.getCategoria(), this.getPeso());
     }
