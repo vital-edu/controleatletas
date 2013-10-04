@@ -18,7 +18,7 @@ public class Judoca extends Atleta {
     public Judoca(String nome) {
         super(nome);
     }
-
+   
     public char getCategoria() {
         return categoria;
     }
@@ -95,10 +95,10 @@ public class Judoca extends Atleta {
         return obterCategoriaPesoNome(this.getCategoria(), this.getPeso());
     }
 
-    public static String obterCategoriaPesoNome(char categoria, double peso) {
-        if (categoria == 'M') {
+    public static String obterCategoriaPesoNome(char sexo, double peso) {
+        if (sexo == 'M') {
             return obterCategoriaPesoNomeFeminino(peso);
-        } else if (categoria == 'F') {
+        } else if (sexo == 'F') {
             return obterCategoriaPesoNomeMasculino(peso);
         } else {
             return "";
