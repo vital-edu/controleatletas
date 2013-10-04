@@ -4,103 +4,145 @@ import java.util.ArrayList;
 
 public class Judoca extends Atleta {
 
-    private String tecnica;
-    private double forca;
-    private double reflexo;
-    private double resistencia;
-    private double agilidade;
-    private String graduaçao;
-    private String estilo;
-    private String divisao;
-    private String classe;
-    private String categoria;
-    private int totalVitorias;
-    private int totalDerrotas;
-    private int totalEmpates;
+    private char categoria; // A=Amador P=Profissional
+    private char estilo; // O=Ofensivo D=Defensivo
+    private ArrayList<Premiacao> premiacoes;
+    private Double envergadura; // Em cm
     private int totalLutas;
+    private int totalVitorias;
+    private int totalVitoriasNocaute;
+    private int totalEmpates;
+    private int totalDerrotas;
+    private String graduaçao; //Kyu(6-1) e Dan(1-10)
     
     public Judoca(String nome) {
         super(nome);
     }
 
-    public String getTecnica() {
-        return tecnica;
+    public char getCategoria() {
+        return categoria;
     }
 
-    public void setTecnica(String tecnica) {
-        this.tecnica = tecnica;
-    }
-
-    public double getForca() {
-        return forca;
-    }
-
-    public void setForca(double forca) {
-        this.forca = forca;
-    }
-
-    public double getReflexo() {
-        return reflexo;
-    }
-
-    public void setReflexo(double reflexo) {
-        this.reflexo = reflexo;
-    }
-
-    public double getResistencia() {
-        return resistencia;
-    }
-
-    public void setResistencia(double resistencia) {
-        this.resistencia = resistencia;
-    }
-
-    public double getAgilidade() {
-        return agilidade;
-    }
-
-    public void setAgilidade(double agilidade) {
-        this.agilidade = agilidade;
-    }
-
-    public String getEstilo() {
-        return estilo;
-    }
-
-    public void setEstilo(String estilo) {
-        this.estilo = estilo;
-    }
-
-    public int getTotalVitorias() {
-        return totalVitorias;
-    }
-
-    public void setTotalVitorias(int totalVitorias) {
-        this.totalVitorias = totalVitorias;
+    public void setCategoria(char categoria) {
+        this.categoria = categoria;
     }
 
     public int getTotalDerrotas() {
         return totalDerrotas;
     }
 
-    public void setTotalDerrotas(int totalDerrotas) {
-        this.totalDerrotas = totalDerrotas;
-    }
-
-    public int getTotalLutas() {
-        return totalLutas;
-    }
-
-    public void setTotalLutas(int totalLutas) {
-        this.totalLutas = totalLutas;
+    public void setTotalDerrotas(int derrotas) {
+        this.totalDerrotas = derrotas;
     }
 
     public int getTotalEmpates() {
         return totalEmpates;
     }
 
-    public void setTotalEmpates(int totalEmpates) {
-        this.totalEmpates = totalEmpates;
+    public void setTotalEmpates(int empates) {
+        this.totalEmpates = empates;
+    }
+
+    public Double getEnvergadura() {
+        return envergadura;
+    }
+
+    public void setEnvergadura(Double envergadura) {
+        this.envergadura = envergadura;
+    }
+
+    public char getEstilo() {
+        return estilo;
+    }
+
+    public void setEstilo(char estilo) {
+        this.estilo = estilo;
+    }
+
+    public int getTotalLutas() {
+        return totalLutas;
+    }
+
+    public void setTotalLutas(int numLutas) {
+        this.totalLutas = numLutas;
+    }
+
+    public ArrayList<Premiacao> getPremiacoes() {
+        return premiacoes;
+    }
+
+    public void setPremiacoes(ArrayList<Premiacao> premiacoes) {
+        this.premiacoes = premiacoes;
+    }
+
+    public int getTotalVitorias() {
+        return totalVitorias;
+    }
+
+    public void setTotalVitorias(int vitorias) {
+        this.totalVitorias = vitorias;
+    }
+
+    public int getTotalVitoriasNocaute() {
+        return totalVitoriasNocaute;
+    }
+
+    public void setTotalVitoriasNocaute(int vitoriasNocaute) {
+        this.totalVitoriasNocaute = vitoriasNocaute;
+    }
+
+    public String obterCategoriaPesoNome() {
+        return obterCategoriaPesoNome(this.getCategoria(), this.getPeso());
+    }
+
+    public static String obterCategoriaPesoNome(char categoria, double peso) {
+        if (categoria == 'M') {
+            return obterCategoriaPesoNomeFeminino(peso);
+        } else if (categoria == 'F') {
+            return obterCategoriaPesoNomeMasculino(peso);
+        } else {
+            return "";
+        }
+    }
+
+    private static String obterCategoriaPesoNomeFeminino(double peso) {
+        if (peso <= 44) {
+            return "Super Ligeiro";
+        } else if (peso <= 48) {
+            return "Ligeiro";
+        } else if (peso <= 52) {
+            return "M. Leve";
+        } else if (peso <= 57) {
+            return "Leve";
+        } else if (peso <= 63) {
+            return "Meio Medio";
+        } else if (peso <= 70) {
+            return "Medio";
+        } else if (peso <= 78) {
+            return "Meio Pesado";
+        } else {
+            return "Pesado";
+        }
+    }
+
+    private static String obterCategoriaPesoNomeMasculino(double peso) {
+        if (peso <= 60) {
+            return "Super Ligeiro";
+        } else if (peso <= 60) {
+            return "Ligeiro";
+        } else if (peso <= 66) {
+            return "Muito Leve";
+        } else if (peso <= 73) {
+            return "Leve";
+        } else if (peso <= 81) {
+            return "Meio Medio";
+        } else if (peso <= 90) {
+            return "Medio";
+        } else if (peso <= 100) {
+            return "Meio Pesado";
+        } else {
+            return "Pesado";
+        }
     }
 
     public String getGraduaçao() {
@@ -111,28 +153,4 @@ public class Judoca extends Atleta {
         this.graduaçao = graduaçao;
     }
 
-    public String getDivisao() {
-        return divisao;
-    }
-
-    public void setDivisao(String divisao) {
-        this.divisao = divisao;
-    }
-
-    public String getClasse() {
-        return classe;
-    }
-
-    public void setClasse(String classe) {
-        this.classe = classe;
-    }
-
-    public String getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
-    }
-    
 }
