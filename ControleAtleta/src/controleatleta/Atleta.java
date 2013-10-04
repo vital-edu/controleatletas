@@ -19,7 +19,11 @@ public class Atleta {
 
     public Atleta(String nome) {
         this.nome = nome;
-        this.endereco = new Endereco();
+    }
+    
+    public Atleta(String nome, char sexo) {
+        this.nome = nome;
+        this.sexo = sexo;
     }
 
     public Atleta(ArrayList<String> telefones, String nome, Date dataNascimento, Endereco endereco, Double altura, Double peso, String nomePai, String nomeMae, char sexo, String rg, String cpf) {
