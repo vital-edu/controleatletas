@@ -9,7 +9,7 @@ public class PremiacaoTest {
     Premiacao umaPremiacao;
     
     @Before
-    public void setUp() {
+    public void setUp() throws Exception {
         umaPremiacao = new Premiacao("Campeonato Mundial", 2012,2);
     }
 
