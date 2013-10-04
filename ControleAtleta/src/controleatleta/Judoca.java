@@ -10,7 +10,6 @@ public class Judoca extends Atleta {
     private Double envergadura; // Em cm
     private int totalLutas;
     private int totalVitorias;
-    private int totalVitoriasNocaute;
     private int totalEmpates;
     private int totalDerrotas;
     private String graduaçao; //Kyu(6-1) e Dan(1-10)
