@@ -6,9 +6,10 @@ public class Premiacao {
     private int ano;
     private int colocacao;
 
-    public Premiacao(String titulo, int ano) {
+    public Premiacao(String titulo, int ano, int colocacao) {
         this.titulo = titulo;
         this.ano = ano;
+        this.colocacao = colocacao;
     }
 
     public String getTitulo() {
