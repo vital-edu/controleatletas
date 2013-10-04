@@ -16,7 +16,7 @@ public class Atleta {
     private char sexo;
     private String rg;
     private String cpf;
-    
+
     public Atleta(String nome) {
         this.nome = nome;
         this.endereco = new Endereco();
