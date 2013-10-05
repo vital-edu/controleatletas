@@ -164,6 +164,7 @@ private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//G
 
         java.awt.EventQueue.invokeLater(new Runnable() {
 
+            @Override
             public void run() {
                 CadastroPremiacao dialog = new CadastroPremiacao(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
