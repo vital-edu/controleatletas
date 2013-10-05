@@ -1,16 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package controleatleta;
 
-/**
- *
- * @author stark
- */
 public class Menu extends javax.swing.JFrame {
-    private String opcao;
-    
+
     /**
      * Creates new form Menu
      */
@@ -29,28 +20,18 @@ public class Menu extends javax.swing.JFrame {
 
         TipoAtleta = new javax.swing.JLabel();
         jComboBoxTipoAtleta = new javax.swing.JComboBox();
-        jButtonOk = new javax.swing.JButton();
+        jButtonConfirmar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         TipoAtleta.setText("Selecione o tipo de atleta:");
 
-        jComboBoxTipoAtleta.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Boxeador", "Judoca"}));
-        jComboBoxTipoAtleta.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                jComboBoxTipoAtletaItemStateChanged(evt);
-            }
-        });
-        jComboBoxTipoAtleta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxTipoAtletaActionPerformed(evt);
-            }
-        });
+        jComboBoxTipoAtleta.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Boxeador", "Judoca" }));
 
-        jButtonOk.setText("OK");
-        jButtonOk.addActionListener(new java.awt.event.ActionListener() {
+        jButtonConfirmar.setText("Confirmar");
+        jButtonConfirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonOkActionPerformed(evt);
+                jButtonConfirmarActionPerformed(evt);
             }
         });
 
@@ -63,8 +44,8 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(TipoAtleta)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jComboBoxTipoAtleta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonOk)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonConfirmar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -74,28 +55,25 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TipoAtleta)
                     .addComponent(jComboBoxTipoAtleta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonOk))
+                    .addComponent(jButtonConfirmar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBoxTipoAtletaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxTipoAtletaActionPerformed
+    private void jButtonConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarActionPerformed
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jComboBoxTipoAtletaActionPerformed
-
-    private void jComboBoxTipoAtletaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxTipoAtletaItemStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxTipoAtletaItemStateChanged
-
-    private void jButtonOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOkActionPerformed
-        // TODO add your handling code here:
-        if (evt.getSource() == jButtonOk){
-            opcao=jComboBoxTipoAtleta.getSelectedItem().toString();
+        if ("Judoca".equals(jComboBoxTipoAtleta.getSelectedItem().toString())){
+            CadastroJudoca umCadastroJudoca = new CadastroJudoca();
+            umCadastroJudoca.setVisible(true);
+            this.setVisible(false);
+        }else if ("Boxeador".equals(jComboBoxTipoAtleta.getSelectedItem().toString())){
+            CadastroBoxeador umCadastroBoxeador = new CadastroBoxeador();
+            umCadastroBoxeador.setVisible(true);
+            this.setVisible(false);
         }
-    }//GEN-LAST:event_jButtonOkActionPerformed
+    }//GEN-LAST:event_jButtonConfirmarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -134,12 +112,7 @@ public class Menu extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel TipoAtleta;
-    private javax.swing.JButton jButtonOk;
+    private javax.swing.JButton jButtonConfirmar;
     private javax.swing.JComboBox jComboBoxTipoAtleta;
     // End of variables declaration//GEN-END:variables
-
-    public String getOpcao(){
-        return opcao;
-    }
-    
 }
