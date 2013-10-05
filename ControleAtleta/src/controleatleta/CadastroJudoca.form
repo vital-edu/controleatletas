@@ -29,6 +29,7 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -150,7 +151,7 @@
                               <Component id="jTextFieldPeso" min="-2" pref="56" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="jScrollPane1" pref="513" max="32767" attributes="1"/>
+                              <Component id="jScrollPane1" pref="497" max="32767" attributes="1"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jButtonAdicionarTelefone" min="-2" pref="60" max="-2" attributes="0"/>
@@ -382,7 +383,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jTextFieldCidade" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
                           <Component id="jTextFieldBairro" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
-                          <Component id="jTextFieldComplemento" alignment="0" pref="632" max="32767" attributes="0"/>
+                          <Component id="jTextFieldComplemento" alignment="0" pref="603" max="32767" attributes="0"/>
                           <Component id="jTextFieldNumero" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
                           <Component id="jTextFieldLogradouro" alignment="0" pref="632" max="32767" attributes="1"/>
                           <Component id="jComboBoxEstado" min="-2" max="-2" attributes="0"/>
@@ -573,7 +574,7 @@
                           <Component id="jTextFieldTotalLutas" alignment="0" pref="231" max="32767" attributes="1"/>
                           <Component id="jComboBoxEstilo" alignment="0" pref="231" max="32767" attributes="1"/>
                           <Component id="jTextFieldCategoriaPeso" alignment="0" pref="231" max="32767" attributes="1"/>
-                          <Component id="jComboBoxCategoria" alignment="0" pref="231" max="32767" attributes="1"/>
+                          <Component id="jComboBoxCategoria" alignment="0" pref="199" max="32767" attributes="1"/>
                           <Component id="jComboBoxGraduacao" alignment="0" pref="231" max="32767" attributes="1"/>
                           <Component id="jTextFieldEnvergadura" alignment="0" pref="231" max="32767" attributes="1"/>
                       </Group>
@@ -657,7 +658,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="32" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

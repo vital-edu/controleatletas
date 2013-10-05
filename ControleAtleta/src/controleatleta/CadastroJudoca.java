@@ -44,7 +44,7 @@ public class CadastroJudoca extends javax.swing.JFrame {
     }
 
     private void limparCampos() {
-        jTextFieldAltura.setText("0.0");
+        jTextFieldAltura.setText("");
         jTextFieldBairro.setText(null);
         jTextFieldCategoriaPeso.setText(null);
         jTextFieldCep.setText(null);
@@ -60,7 +60,7 @@ public class CadastroJudoca extends javax.swing.JFrame {
         jTextFieldNomePai.setText(null);
         jTextFieldNumero.setText("0");
         jTextFieldPais.setText(null);
-        jTextFieldPeso.setText("0.0");
+        jTextFieldPeso.setText("0");
         jTextFieldRg.setText(null);
         jTextFieldTotalDerrotas.setText("0");
         jTextFieldTotalEmpates.setText("0");
@@ -154,6 +154,11 @@ public class CadastroJudoca extends javax.swing.JFrame {
             jTextFieldNome.requestFocus();
             return false;
         }
+        if (jTextFieldDataNascimento.getText().trim().length() == 0) {
+            this.exibirInformacao("O valor do campo 'Data de Nascimento' não foi informado.");
+            jTextFieldDataNascimento.requestFocus();
+            return false;
+        }
         if (jTextFieldDataNascimento.getText().length() != 0) {
             try {
                 dateFormat.parse(jTextFieldDataNascimento.getText());
@@ -170,6 +175,13 @@ public class CadastroJudoca extends javax.swing.JFrame {
             jTextFieldAltura.requestFocus();
             return false;
         }
+        
+        if(jTextFieldPeso.getText().equals("0")){
+            this.exibirInformacao("O valor do campo 'Peso' nao pode ser igual a 0.");
+            jTextFieldPeso.requestFocus();
+            return false;
+        }
+
         try {
             Double.parseDouble(jTextFieldPeso.getText());
         } catch (Exception ex) {
@@ -587,7 +599,7 @@ public class CadastroJudoca extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextFieldPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButtonAdicionarTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -692,7 +704,7 @@ public class CadastroJudoca extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextFieldCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldComplemento, javax.swing.GroupLayout.DEFAULT_SIZE, 632, Short.MAX_VALUE)
+                    .addComponent(jTextFieldComplemento, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
                     .addComponent(jTextFieldNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldLogradouro, javax.swing.GroupLayout.DEFAULT_SIZE, 632, Short.MAX_VALUE)
                     .addComponent(jComboBoxEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -822,7 +834,7 @@ public class CadastroJudoca extends javax.swing.JFrame {
                     .addComponent(jTextFieldTotalLutas, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
                     .addComponent(jComboBoxEstilo, 0, 231, Short.MAX_VALUE)
                     .addComponent(jTextFieldCategoriaPeso, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
-                    .addComponent(jComboBoxCategoria, 0, 231, Short.MAX_VALUE)
+                    .addComponent(jComboBoxCategoria, 0, 199, Short.MAX_VALUE)
                     .addComponent(jComboBoxGraduacao, 0, 231, Short.MAX_VALUE)
                     .addComponent(jTextFieldEnvergadura, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
@@ -886,7 +898,7 @@ public class CadastroJudoca extends javax.swing.JFrame {
                                 .addComponent(jButtonAdicionarPremiacao)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButtonRemoverPremiacao)))))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Ficha Técnica", jPanel3);
