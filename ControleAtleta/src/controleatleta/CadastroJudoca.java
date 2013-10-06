@@ -409,7 +409,23 @@ public class CadastroJudoca extends javax.swing.JFrame {
     }
     
     private void atualizarFaixa(){        
-        jTextFieldFaixa.setText(Judoca.obterCorFaixa(jComboBoxGraduacao.getSelectedIndex()));         
+        jTextFieldFaixa.setText(Judoca.obterCorFaixa(jComboBoxGraduacao.getSelectedIndex()));
+        if (jComboBoxGraduacao.getSelectedIndex() <= 1){
+                jTextFieldFaixa.setBackground(new java.awt.Color(254, 254, 254));
+        }else if (jComboBoxGraduacao.getSelectedIndex() <= 2){
+                jTextFieldFaixa.setBackground(new java.awt.Color(0,55,255));
+        }else if (jComboBoxGraduacao.getSelectedIndex() <= 3){
+                jTextFieldFaixa.setBackground(new java.awt.Color(0,55,255));
+        }else if (jComboBoxGraduacao.getSelectedIndex() <= 4){
+                jTextFieldFaixa.setBackground(new java.awt.Color(0,55,255));
+        }else if (jComboBoxGraduacao.getSelectedIndex() <= 7){
+                jTextFieldFaixa.setBackground(new java.awt.Color(0,55,255));
+        }else if (jComboBoxGraduacao.getSelectedIndex() <= 10){
+                jTextFieldFaixa.setBackground(new java.awt.Color(255, 0, 0));
+        }else{
+                jTextFieldFaixa.setBackground(new java.awt.Color(1, 1, 1));
+        }
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -838,9 +854,15 @@ public class CadastroJudoca extends javax.swing.JFrame {
         jLabelFaixa.setText("Faixa:");
 
         jTextFieldFaixa.setEditable(false);
+        jTextFieldFaixa.setBackground(new java.awt.Color(0, 55, 255));
         jTextFieldFaixa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldFaixaActionPerformed(evt);
+            }
+        });
+        jTextFieldFaixa.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jTextFieldFaixaPropertyChange(evt);
             }
         });
 
@@ -1188,6 +1210,10 @@ private void jTextFieldDataNascimentoActionPerformed(java.awt.event.ActionEvent 
         // TODO add your handling code here:
         this.atualizarFaixa();
     }//GEN-LAST:event_jComboBoxGraduacaoActionPerformed
+
+    private void jTextFieldFaixaPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jTextFieldFaixaPropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldFaixaPropertyChange
               
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAdicionarPremiacao;
