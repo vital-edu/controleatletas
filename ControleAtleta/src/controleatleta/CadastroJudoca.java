@@ -24,9 +24,6 @@ public class CadastroJudoca extends javax.swing.JFrame {
     private final byte ESTILO_OFENSIVO_INDICE = 1;
     private final char ESTILO_OFENSIVO_VALOR = 'O';
     private final char ESTILO_DEFENSIVO_VALOR = 'D';
-    private final byte GRADUACAO_INDICE = 0;///
-    private final String GRADUACAO = "6º Dan";
-    private final String FAIXA = "Branca";
     private DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
     private ControleJudoca controleJudoca;
     private Judoca umJudoca;
@@ -69,6 +66,7 @@ public class CadastroJudoca extends javax.swing.JFrame {
         jTextFieldTotalEmpates.setText("0");
         jTextFieldTotalLutas.setText("0");
         jTextFieldTotalVitorias.setText("0");
+        jTextFieldFaixa.setText(null);
         telefonesListModel.clear();
         premiacaoListModel.clear();
         jComboBoxSexo.setSelectedIndex(0);
@@ -109,6 +107,9 @@ public class CadastroJudoca extends javax.swing.JFrame {
         jTextFieldTotalEmpates.setText(Integer.toString(umJudoca.getTotalEmpates()));
         jTextFieldTotalLutas.setText(Integer.toString(umJudoca.getTotalLutas()));
         jTextFieldTotalVitorias.setText(Integer.toString(umJudoca.getTotalVitorias()));
+        jComboBoxGraduacao.setSelectedItem(umJudoca.getGraduacao());
+        jTextFieldFaixa.setText(umJudoca.getFaixa());
+        
 
         telefonesListModel.clear();
         telefones = umJudoca.getTelefones();
@@ -344,8 +345,6 @@ public class CadastroJudoca extends javax.swing.JFrame {
         umJudoca.setTotalEmpates(Integer.parseInt(jTextFieldTotalEmpates.getText()));
         umJudoca.setTotalLutas(Integer.parseInt(jTextFieldTotalLutas.getText()));
         umJudoca.setTotalVitorias(Integer.parseInt(jTextFieldTotalVitorias.getText()));
-        umJudoca.setGraduacao(GRADUACAO);
-        umJudoca.setFaixa(FAIXA);
 
         switch (jComboBoxSexo.getSelectedIndex()) {
             case SEXO_MASCULINO_INDICE:
@@ -355,7 +354,44 @@ public class CadastroJudoca extends javax.swing.JFrame {
                 umJudoca.setSexo(SEXO_FEMININO_VALOR);
                 break;
         }
-
+        
+        switch (jComboBoxGraduacao.getSelectedIndex()) {
+            case 0:
+                umJudoca.setGraduacao("6º Kyu");
+            case 1:
+                umJudoca.setGraduacao("5º Kyu");
+            case 2:
+                umJudoca.setGraduacao("4º Kyu");
+            case 3:
+                umJudoca.setGraduacao("3º Kyu");
+            case 4:
+                umJudoca.setGraduacao("2º Kyu");
+            case 5:
+                umJudoca.setGraduacao("1º Kyu");
+            case 6:
+                umJudoca.setGraduacao("1º Dan");
+            case 7:
+                umJudoca.setGraduacao("2º Dan");
+            case 8:
+                umJudoca.setGraduacao("3º Dan");
+            case 9:
+                umJudoca.setGraduacao("4º Dan");
+            case 10:
+                umJudoca.setGraduacao("5º Dan");
+            case 11:
+                umJudoca.setGraduacao("6º Dan");
+            case 12:
+                umJudoca.setGraduacao("7º Dan");
+            case 13:
+                umJudoca.setGraduacao("8º Dan");
+            case 14:
+                umJudoca.setGraduacao("9º Dan");
+            case 15:
+                umJudoca.setGraduacao("10º Dan");        
+        }
+        
+        umJudoca.setFaixa(Judoca.obterCorFaixa(jComboBoxGraduacao.getSelectedIndex()));
+        
         switch (jComboBoxCategoria.getSelectedIndex()) {
             case CATEGORIA_AMADOR_INDICE:
                 umJudoca.setCategoria(CATEGORIA_AMADOR_VALOR);
@@ -418,9 +454,9 @@ public class CadastroJudoca extends javax.swing.JFrame {
                 jTextFieldFaixa.setBackground(new java.awt.Color(0,55,255));
         }else if (jComboBoxGraduacao.getSelectedIndex() <= 4){
                 jTextFieldFaixa.setBackground(new java.awt.Color(0,55,255));
-        }else if (jComboBoxGraduacao.getSelectedIndex() <= 7){
-                jTextFieldFaixa.setBackground(new java.awt.Color(0,55,255));
         }else if (jComboBoxGraduacao.getSelectedIndex() <= 10){
+                jTextFieldFaixa.setBackground(new java.awt.Color(1, 1, 1));
+        }else if (jComboBoxGraduacao.getSelectedIndex() <= 15){
                 jTextFieldFaixa.setBackground(new java.awt.Color(255, 0, 0));
         }else{
                 jTextFieldFaixa.setBackground(new java.awt.Color(1, 1, 1));
@@ -854,7 +890,6 @@ public class CadastroJudoca extends javax.swing.JFrame {
         jLabelFaixa.setText("Faixa:");
 
         jTextFieldFaixa.setEditable(false);
-        jTextFieldFaixa.setBackground(new java.awt.Color(0, 55, 255));
         jTextFieldFaixa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldFaixaActionPerformed(evt);
