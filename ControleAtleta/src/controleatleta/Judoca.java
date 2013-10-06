@@ -12,13 +12,22 @@ public class Judoca extends Atleta {
     private int totalVitorias;
     private int totalEmpates;
     private int totalDerrotas;
-    private String graduaçao; //Kyu(6-1) e Dan(1-10)
+    private String graduacao; //Kyu(6-1) e Dan(1-10)
+    private String faixa;
+
+    public String getFaixa() {
+        return faixa;
+    }
+
+    public void setFaixa(String faixa) {
+        this.faixa = faixa;
+    }
     
     public Judoca(String nome) {
         super(nome);
     }
     
-    public Judoca(char categoria, char estilo, Double envergadura, int totalLutas, int totalVitorias, int totalEmpates, int totalDerrotas, String graduaçao, String nome, char sexo) {
+    public Judoca(char categoria, char estilo, Double envergadura, int totalLutas, int totalVitorias, int totalEmpates, int totalDerrotas, String graduacao, String nome, char sexo) {
         super(nome, sexo);
         this.categoria = categoria;
         this.estilo = estilo;
@@ -27,7 +36,7 @@ public class Judoca extends Atleta {
         this.totalVitorias = totalVitorias;
         this.totalEmpates = totalEmpates;
         this.totalDerrotas = totalDerrotas;
-        this.graduaçao = graduaçao;
+        this.graduacao = graduacao;
     }
    
     public char getCategoria() {
@@ -98,17 +107,17 @@ public class Judoca extends Atleta {
         return obterCategoriaPesoNome(this.getCategoria(), this.getPeso());
     }
 
-    public static String obterCategoriaPesoNome(char sexo, double peso) {
-        if (sexo == 'M') {
+    public static String obterCategoriaPesoNome(char sexo, Double peso) {
+        if (sexo == 'F') {
             return obterCategoriaPesoNomeFeminino(peso);
-        } else if (sexo == 'F') {
+        } else if (sexo == 'M') {
             return obterCategoriaPesoNomeMasculino(peso);
         } else {
             return "";
         }
     }
 
-    private static String obterCategoriaPesoNomeFeminino(double peso) {
+    private static String obterCategoriaPesoNomeFeminino(Double peso) {
         if (peso <= 44) {
             return "Super Ligeiro";
         } else if (peso <= 48) {
@@ -128,8 +137,8 @@ public class Judoca extends Atleta {
         }
     }
 
-    private static String obterCategoriaPesoNomeMasculino(double peso) {
-        if (peso <= 60) {
+    private static String obterCategoriaPesoNomeMasculino(Double peso) {
+        if (peso <= 50) {
             return "Super Ligeiro";
         } else if (peso <= 60) {
             return "Ligeiro";
@@ -148,12 +157,48 @@ public class Judoca extends Atleta {
         }
     }
 
-    public String getGraduaçao() {
-        return graduaçao;
+    public String getGraduacao() {
+        return graduacao;
     }
 
-    public void setGraduaçao(String graduaçao) {
-        this.graduaçao = graduaçao;
+    public void setGraduacao(String graduacao) {
+        this.graduacao = graduacao;
     }
-
-}
+    
+    public static String obterCorFaixa(int graduacao){
+        if (graduacao == 0){
+            return "Branca";
+        }else if(graduacao == 1){
+            return "Branca";
+        }else if(graduacao == 2){
+            return "Branca";
+        }else if(graduacao == 3){
+            return "Branca";
+        }else if(graduacao == 4){
+            return "Branca";
+        }else if(graduacao == 5){
+            return "Branca";
+        }else if(graduacao == 6){
+            return "Preta";
+        }else if(graduacao == 7){
+            return "Preta";
+        }else if(graduacao == 8){
+            return "Preta";
+        }else if(graduacao == 9){
+            return "Preta";
+        }else if(graduacao == 10){
+            return "Preta";
+        }else if(graduacao == 11){
+            return "Preta";
+        }else if(graduacao == 12){
+            return "Preta";
+        }else if(graduacao == 13){
+            return "Preta";
+        }else if(graduacao == 14){
+            return "Vermelha";
+        }else if(graduacao == 15){
+            return "Vermelha";
+        }else
+            return "Branca";
+        }
+    }
