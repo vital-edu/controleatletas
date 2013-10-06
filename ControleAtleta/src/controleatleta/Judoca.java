@@ -15,19 +15,11 @@ public class Judoca extends Atleta {
     private String graduacao; //Kyu(6-1) e Dan(1-10)
     private String faixa;
 
-    public String getFaixa() {
-        return faixa;
-    }
-
-    public void setFaixa(String faixa) {
-        this.faixa = faixa;
-    }
-    
     public Judoca(String nome) {
         super(nome);
     }
     
-    public Judoca(char categoria, char estilo, Double envergadura, int totalLutas, int totalVitorias, int totalEmpates, int totalDerrotas, String graduacao, String nome, char sexo) {
+    public Judoca(char categoria, char estilo, Double envergadura, int totalLutas, int totalVitorias, int totalEmpates, int totalDerrotas, String graduacao, String nome, char sexo, String faixa) {
         super(nome, sexo);
         this.categoria = categoria;
         this.estilo = estilo;
@@ -37,8 +29,17 @@ public class Judoca extends Atleta {
         this.totalEmpates = totalEmpates;
         this.totalDerrotas = totalDerrotas;
         this.graduacao = graduacao;
+        this.faixa = faixa;
     }
    
+    public String getFaixa() {
+        return faixa;
+    }
+
+    public void setFaixa(String faixa) {
+        this.faixa = faixa;
+    }
+    
     public char getCategoria() {
         return categoria;
     }
