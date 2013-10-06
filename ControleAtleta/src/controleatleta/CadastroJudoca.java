@@ -60,7 +60,7 @@ public class CadastroJudoca extends javax.swing.JFrame {
         jTextFieldNomePai.setText(null);
         jTextFieldNumero.setText("0");
         jTextFieldPais.setText(null);
-        jTextFieldPeso.setText("0");
+        jTextFieldPeso.setText("0.0");
         jTextFieldRg.setText(null);
         jTextFieldTotalDerrotas.setText("0");
         jTextFieldTotalEmpates.setText("0");
@@ -391,18 +391,14 @@ public class CadastroJudoca extends javax.swing.JFrame {
     }
 
     private void atualizarCategoriaPeso() {
-        char categoria;
-        switch (jComboBoxCategoria.getSelectedIndex()) {
+        switch (jComboBoxSexo.getSelectedIndex()) {
             case SEXO_MASCULINO_INDICE:
-                categoria = SEXO_MASCULINO_VALOR;
+                jTextFieldCategoriaPeso.setText(Judoca.obterCategoriaPesoNome(SEXO_MASCULINO_VALOR, Double.parseDouble(jTextFieldPeso.getText())));
                 break;
             case SEXO_FEMININO_INDICE:
-                categoria = SEXO_FEMININO_VALOR;
+                jTextFieldCategoriaPeso.setText(Judoca.obterCategoriaPesoNome(SEXO_FEMININO_VALOR, Double.parseDouble(jTextFieldPeso.getText())));
                 break;
-            default:
-                return;
         }
-        jTextFieldCategoriaPeso.setText(Judoca.obterCategoriaPesoNome(categoria, Double.parseDouble(jTextFieldPeso.getText())));
     }
 
     @SuppressWarnings("unchecked")
@@ -478,6 +474,8 @@ public class CadastroJudoca extends javax.swing.JFrame {
         jButtonRemoverPremiacao = new javax.swing.JButton();
         jLabelGraducao = new javax.swing.JLabel();
         jComboBoxGraduacao = new javax.swing.JComboBox();
+        jLabelFaixa = new javax.swing.JLabel();
+        jTextFieldFaixa = new javax.swing.JTextField();
         jButtonAlterar = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
         jButtonExcluir = new javax.swing.JButton();
@@ -563,6 +561,12 @@ public class CadastroJudoca extends javax.swing.JFrame {
         });
 
         jComboBoxSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Masculino", "Feminino" }));
+        jComboBoxSexo.setSelectedIndex(1);
+        jComboBoxSexo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxSexoActionPerformed(evt);
+            }
+        });
 
         jTextFieldDataNascimento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -810,6 +814,14 @@ public class CadastroJudoca extends javax.swing.JFrame {
 
         jComboBoxGraduacao.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "6 º Kyu", "5 º Kyu", "4º Kyu", "3º Kyu", "2º Kyu", "1º Kyu", "1º Dan", "2º Dan", "3º Dan", "4º Dan", "5º Dan", "6º Dan", "7º Dan", "8º Dan", "9º Dan", "10º Dan" }));
 
+        jLabelFaixa.setText("Faixa:");
+
+        jTextFieldFaixa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldFaixaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -825,7 +837,8 @@ public class CadastroJudoca extends javax.swing.JFrame {
                     .addComponent(jLabelTotalVitorias)
                     .addComponent(jLabelTotalEmpates)
                     .addComponent(jLabelTotalDerrotas)
-                    .addComponent(jLabelGraducao))
+                    .addComponent(jLabelGraducao)
+                    .addComponent(jLabelFaixa))
                 .addGap(76, 76, 76)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextFieldTotalDerrotas, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
@@ -836,7 +849,8 @@ public class CadastroJudoca extends javax.swing.JFrame {
                     .addComponent(jTextFieldCategoriaPeso, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
                     .addComponent(jComboBoxCategoria, 0, 199, Short.MAX_VALUE)
                     .addComponent(jComboBoxGraduacao, 0, 231, Short.MAX_VALUE)
-                    .addComponent(jTextFieldEnvergadura, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE))
+                    .addComponent(jTextFieldEnvergadura, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
+                    .addComponent(jTextFieldFaixa))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelPremiacoes)
@@ -872,6 +886,10 @@ public class CadastroJudoca extends javax.swing.JFrame {
                             .addComponent(jComboBoxGraduacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabelFaixa)
+                            .addComponent(jTextFieldFaixa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabelEnvergadura)
                             .addComponent(jTextFieldEnvergadura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -893,12 +911,12 @@ public class CadastroJudoca extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
                         .addGap(46, 46, 46)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jButtonAdicionarPremiacao)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButtonRemoverPremiacao)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Ficha Técnica", jPanel3);
@@ -1006,7 +1024,7 @@ public class CadastroJudoca extends javax.swing.JFrame {
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             );
 
@@ -1128,9 +1146,18 @@ private void jTextFieldDataNascimentoActionPerformed(java.awt.event.ActionEvent 
     }//GEN-LAST:event_jTextFieldCategoriaPesoActionPerformed
 
     private void jComboBoxCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxCategoriaActionPerformed
-        this.atualizarCategoriaPeso();
+
     }//GEN-LAST:event_jComboBoxCategoriaActionPerformed
 
+    private void jTextFieldFaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldFaixaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldFaixaActionPerformed
+
+    private void jComboBoxSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSexoActionPerformed
+        // TODO add your handling code here:
+        this.atualizarCategoriaPeso();
+    }//GEN-LAST:event_jComboBoxSexoActionPerformed
+              
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAdicionarPremiacao;
     private javax.swing.JButton jButtonAdicionarTelefone;
@@ -1159,6 +1186,7 @@ private void jTextFieldDataNascimentoActionPerformed(java.awt.event.ActionEvent 
     private javax.swing.JLabel jLabelEnvergadura;
     private javax.swing.JLabel jLabelEstado;
     private javax.swing.JLabel jLabelEstilo;
+    private javax.swing.JLabel jLabelFaixa;
     private javax.swing.JLabel jLabelGraducao;
     private javax.swing.JLabel jLabelListaJudocas;
     private javax.swing.JLabel jLabelLogradouro;
@@ -1197,6 +1225,7 @@ private void jTextFieldDataNascimentoActionPerformed(java.awt.event.ActionEvent 
     private javax.swing.JTextField jTextFieldCpf;
     private javax.swing.JTextField jTextFieldDataNascimento;
     private javax.swing.JTextField jTextFieldEnvergadura;
+    private javax.swing.JTextField jTextFieldFaixa;
     private javax.swing.JTextField jTextFieldLogradouro;
     private javax.swing.JTextField jTextFieldNome;
     private javax.swing.JTextField jTextFieldNomeMae;

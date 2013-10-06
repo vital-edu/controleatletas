@@ -93,7 +93,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jScrollPane4" min="-2" pref="124" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jTabbedPane1" min="-2" pref="372" max="-2" attributes="0"/>
+              <Component id="jTabbedPane1" min="-2" pref="451" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -342,7 +342,11 @@
                     <StringItem index="1" value="Feminino"/>
                   </StringArray>
                 </Property>
+                <Property name="selectedIndex" type="int" value="1"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxSexoActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextFieldDataNascimento">
               <Events>
@@ -565,6 +569,7 @@
                           <Component id="jLabelTotalEmpates" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabelTotalDerrotas" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabelGraducao" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelFaixa" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -577,6 +582,7 @@
                           <Component id="jComboBoxCategoria" alignment="0" pref="199" max="32767" attributes="1"/>
                           <Component id="jComboBoxGraduacao" alignment="0" pref="231" max="32767" attributes="1"/>
                           <Component id="jTextFieldEnvergadura" alignment="0" pref="231" max="32767" attributes="1"/>
+                          <Component id="jTextFieldFaixa" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -622,6 +628,11 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabelFaixa" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldFaixa" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabelEnvergadura" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jTextFieldEnvergadura" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -649,7 +660,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jScrollPane2" min="-2" pref="265" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane2" min="-2" pref="358" max="-2" attributes="0"/>
                                   <Group type="102" attributes="0">
                                       <Component id="jButtonAdicionarPremiacao" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -810,6 +821,16 @@
                   </StringArray>
                 </Property>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelFaixa">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Faixa:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextFieldFaixa">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldFaixaActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
