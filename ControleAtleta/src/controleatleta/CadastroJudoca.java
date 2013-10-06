@@ -24,6 +24,9 @@ public class CadastroJudoca extends javax.swing.JFrame {
     private final byte ESTILO_OFENSIVO_INDICE = 1;
     private final char ESTILO_OFENSIVO_VALOR = 'O';
     private final char ESTILO_DEFENSIVO_VALOR = 'D';
+    private final byte GRADUACAO_INDICE = 0;///
+    private final String GRADUACAO = "6º Dan";
+    private final String FAIXA = "Branca";
     private DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
     private ControleJudoca controleJudoca;
     private Judoca umJudoca;
@@ -73,6 +76,7 @@ public class CadastroJudoca extends javax.swing.JFrame {
         jComboBoxCategoria.setSelectedIndex(0);
         jComboBoxEstilo.setSelectedIndex(0);
         this.atualizarCategoriaPeso();
+        this.atualizarFaixa();
     }
 
     private void preencherCampos() {
@@ -146,6 +150,7 @@ public class CadastroJudoca extends javax.swing.JFrame {
         }
 
         this.atualizarCategoriaPeso();
+        this.atualizarFaixa();
     }
 
     private boolean validarCampos() {
@@ -339,6 +344,8 @@ public class CadastroJudoca extends javax.swing.JFrame {
         umJudoca.setTotalEmpates(Integer.parseInt(jTextFieldTotalEmpates.getText()));
         umJudoca.setTotalLutas(Integer.parseInt(jTextFieldTotalLutas.getText()));
         umJudoca.setTotalVitorias(Integer.parseInt(jTextFieldTotalVitorias.getText()));
+        umJudoca.setGraduacao(GRADUACAO);
+        umJudoca.setFaixa(FAIXA);
 
         switch (jComboBoxSexo.getSelectedIndex()) {
             case SEXO_MASCULINO_INDICE:
@@ -399,6 +406,10 @@ public class CadastroJudoca extends javax.swing.JFrame {
                 jTextFieldCategoriaPeso.setText(Judoca.obterCategoriaPesoNome(SEXO_FEMININO_VALOR, Double.parseDouble(jTextFieldPeso.getText())));
                 break;
         }
+    }
+    
+    private void atualizarFaixa(){        
+        jTextFieldFaixa.setText(Judoca.obterCorFaixa(jComboBoxGraduacao.getSelectedIndex()));         
     }
 
     @SuppressWarnings("unchecked")
@@ -561,7 +572,6 @@ public class CadastroJudoca extends javax.swing.JFrame {
         });
 
         jComboBoxSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Masculino", "Feminino" }));
-        jComboBoxSexo.setSelectedIndex(1);
         jComboBoxSexo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxSexoActionPerformed(evt);
@@ -779,6 +789,12 @@ public class CadastroJudoca extends javax.swing.JFrame {
 
         jLabelTotalLutas.setText("Total de Lutas:");
 
+        jTextFieldTotalLutas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldTotalLutasActionPerformed(evt);
+            }
+        });
+
         jLabelTotalVitorias.setText("Total de Vitórias:");
 
         jLabelTotalEmpates.setText("Total de Empates:");
@@ -813,9 +829,15 @@ public class CadastroJudoca extends javax.swing.JFrame {
         jLabelGraducao.setText("Graduação:");
 
         jComboBoxGraduacao.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "6 º Kyu", "5 º Kyu", "4º Kyu", "3º Kyu", "2º Kyu", "1º Kyu", "1º Dan", "2º Dan", "3º Dan", "4º Dan", "5º Dan", "6º Dan", "7º Dan", "8º Dan", "9º Dan", "10º Dan" }));
+        jComboBoxGraduacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxGraduacaoActionPerformed(evt);
+            }
+        });
 
         jLabelFaixa.setText("Faixa:");
 
+        jTextFieldFaixa.setEditable(false);
         jTextFieldFaixa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldFaixaActionPerformed(evt);
@@ -916,7 +938,7 @@ public class CadastroJudoca extends javax.swing.JFrame {
                                 .addComponent(jButtonAdicionarPremiacao)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButtonRemoverPremiacao)))))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Ficha Técnica", jPanel3);
@@ -1157,6 +1179,15 @@ private void jTextFieldDataNascimentoActionPerformed(java.awt.event.ActionEvent 
         // TODO add your handling code here:
         this.atualizarCategoriaPeso();
     }//GEN-LAST:event_jComboBoxSexoActionPerformed
+
+    private void jTextFieldTotalLutasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTotalLutasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldTotalLutasActionPerformed
+
+    private void jComboBoxGraduacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxGraduacaoActionPerformed
+        // TODO add your handling code here:
+        this.atualizarFaixa();
+    }//GEN-LAST:event_jComboBoxGraduacaoActionPerformed
               
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAdicionarPremiacao;
