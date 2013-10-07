@@ -463,34 +463,24 @@ public class CadastroJudoca extends javax.swing.JFrame {
                 jTextFieldFaixa.setBackground(new java.awt.Color(255, 255, 255));
         }else if (jComboBoxGraduacao.getSelectedIndex() <= 3){
                 jTextFieldFaixa.setBackground(new java.awt.Color(105,105,105));
-                jTextFieldFaixa.setSelectedTextColor(Color.WHITE);
         }else if (jComboBoxGraduacao.getSelectedIndex() <= 5){
                 jTextFieldFaixa.setBackground(new java.awt.Color(0,0,255));
-                jTextFieldFaixa.setSelectedTextColor(Color.WHITE);
         }else if (jComboBoxGraduacao.getSelectedIndex() <= 7){
                 jTextFieldFaixa.setBackground(new java.awt.Color(255,255,0));
-                jTextFieldFaixa.setSelectedTextColor(Color.WHITE);
         }else if (jComboBoxGraduacao.getSelectedIndex() <= 8){
                 jTextFieldFaixa.setBackground(new java.awt.Color(255,69,0));
-                jTextFieldFaixa.setSelectedTextColor(Color.WHITE);
         }else if (jComboBoxGraduacao.getSelectedIndex() <= 9){
                 jTextFieldFaixa.setBackground(new java.awt.Color(0,100,0));      
-                jTextFieldFaixa.setSelectedTextColor(Color.WHITE);
         }else if (jComboBoxGraduacao.getSelectedIndex() <= 10){
                 jTextFieldFaixa.setBackground(new java.awt.Color(85,26,139));
-                jTextFieldFaixa.setSelectedTextColor(Color.WHITE);
         }else if (jComboBoxGraduacao.getSelectedIndex() <= 11){
                 jTextFieldFaixa.setBackground(new java.awt.Color(139,37,0));
-                jTextFieldFaixa.setSelectedTextColor(Color.WHITE);
         }else if (jComboBoxGraduacao.getSelectedIndex() <= 16){
                 jTextFieldFaixa.setBackground(new java.awt.Color(1,1,1));
-                jTextFieldFaixa.setSelectedTextColor(Color.WHITE);
         }else if (jComboBoxGraduacao.getSelectedIndex() <= 19){
                 jTextFieldFaixa.setBackground(new java.awt.Color(205, 92, 92));
-                jTextFieldFaixa.setSelectedTextColor(Color.WHITE);
         }else{ 
                 jTextFieldFaixa.setBackground(new java.awt.Color(255, 0, 0));
-                jTextFieldFaixa.setSelectedTextColor(Color.WHITE);
         }
     }
 
