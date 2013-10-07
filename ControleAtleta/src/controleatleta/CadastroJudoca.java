@@ -1,5 +1,6 @@
 package controleatleta;
 
+import java.awt.Color;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -357,37 +358,49 @@ public class CadastroJudoca extends javax.swing.JFrame {
         
         switch (jComboBoxGraduacao.getSelectedIndex()) {
             case 0:
-                umJudoca.setGraduacao("6º Kyu");
+                umJudoca.setGraduacao("Iniciante");
             case 1:
-                umJudoca.setGraduacao("5º Kyu");
+                umJudoca.setGraduacao("11º Kyu");
             case 2:
-                umJudoca.setGraduacao("4º Kyu");
+                umJudoca.setGraduacao("10º Kyu");
             case 3:
-                umJudoca.setGraduacao("3º Kyu");
+                umJudoca.setGraduacao("9º Kyu");
             case 4:
-                umJudoca.setGraduacao("2º Kyu");
+                umJudoca.setGraduacao("8º Kyu");
             case 5:
-                umJudoca.setGraduacao("1º Kyu");
+                umJudoca.setGraduacao("7º Kyu");
             case 6:
-                umJudoca.setGraduacao("1º Dan");
+                umJudoca.setGraduacao("6º Kyu");
             case 7:
-                umJudoca.setGraduacao("2º Dan");
+                umJudoca.setGraduacao("5º Kyu");
             case 8:
-                umJudoca.setGraduacao("3º Dan");
+                umJudoca.setGraduacao("4º Kyu");
             case 9:
-                umJudoca.setGraduacao("4º Dan");
+                umJudoca.setGraduacao("3º Kyu");
             case 10:
-                umJudoca.setGraduacao("5º Dan");
+                umJudoca.setGraduacao("2º Kyu");
             case 11:
-                umJudoca.setGraduacao("6º Dan");
+                umJudoca.setGraduacao("1º Kyu");
             case 12:
-                umJudoca.setGraduacao("7º Dan");
+                umJudoca.setGraduacao("1º Dan");
             case 13:
-                umJudoca.setGraduacao("8º Dan");
+                umJudoca.setGraduacao("2º Dan");
             case 14:
-                umJudoca.setGraduacao("9º Dan");
+                umJudoca.setGraduacao("3º Dan");
             case 15:
-                umJudoca.setGraduacao("10º Dan");        
+                umJudoca.setGraduacao("4º Dan");
+            case 16:
+                umJudoca.setGraduacao("5º Dan");
+            case 17:
+                umJudoca.setGraduacao("6º Dan");
+            case 18:
+                umJudoca.setGraduacao("7º Dan");
+            case 19:
+                umJudoca.setGraduacao("8º Dan");
+            case 20:
+                umJudoca.setGraduacao("9º Dan");
+            case 21:
+                umJudoca.setGraduacao("10º Dan");
         }
         
         umJudoca.setFaixa(Judoca.obterCorFaixa(jComboBoxGraduacao.getSelectedIndex()));
@@ -447,21 +460,38 @@ public class CadastroJudoca extends javax.swing.JFrame {
     private void atualizarFaixa(){        
         jTextFieldFaixa.setText(Judoca.obterCorFaixa(jComboBoxGraduacao.getSelectedIndex()));
         if (jComboBoxGraduacao.getSelectedIndex() <= 1){
-                jTextFieldFaixa.setBackground(new java.awt.Color(254, 254, 254));
-        }else if (jComboBoxGraduacao.getSelectedIndex() <= 2){
-                jTextFieldFaixa.setBackground(new java.awt.Color(0,55,255));
+                jTextFieldFaixa.setBackground(new java.awt.Color(255, 255, 255));
         }else if (jComboBoxGraduacao.getSelectedIndex() <= 3){
-                jTextFieldFaixa.setBackground(new java.awt.Color(0,55,255));
-        }else if (jComboBoxGraduacao.getSelectedIndex() <= 4){
-                jTextFieldFaixa.setBackground(new java.awt.Color(0,55,255));
+                jTextFieldFaixa.setBackground(new java.awt.Color(105,105,105));
+                jTextFieldFaixa.setSelectedTextColor(Color.WHITE);
+        }else if (jComboBoxGraduacao.getSelectedIndex() <= 5){
+                jTextFieldFaixa.setBackground(new java.awt.Color(0,0,255));
+                jTextFieldFaixa.setSelectedTextColor(Color.WHITE);
+        }else if (jComboBoxGraduacao.getSelectedIndex() <= 7){
+                jTextFieldFaixa.setBackground(new java.awt.Color(255,255,0));
+                jTextFieldFaixa.setSelectedTextColor(Color.WHITE);
+        }else if (jComboBoxGraduacao.getSelectedIndex() <= 8){
+                jTextFieldFaixa.setBackground(new java.awt.Color(255,69,0));
+                jTextFieldFaixa.setSelectedTextColor(Color.WHITE);
+        }else if (jComboBoxGraduacao.getSelectedIndex() <= 9){
+                jTextFieldFaixa.setBackground(new java.awt.Color(0,100,0));      
+                jTextFieldFaixa.setSelectedTextColor(Color.WHITE);
         }else if (jComboBoxGraduacao.getSelectedIndex() <= 10){
-                jTextFieldFaixa.setBackground(new java.awt.Color(1, 1, 1));
-        }else if (jComboBoxGraduacao.getSelectedIndex() <= 15){
+                jTextFieldFaixa.setBackground(new java.awt.Color(85,26,139));
+                jTextFieldFaixa.setSelectedTextColor(Color.WHITE);
+        }else if (jComboBoxGraduacao.getSelectedIndex() <= 11){
+                jTextFieldFaixa.setBackground(new java.awt.Color(139,37,0));
+                jTextFieldFaixa.setSelectedTextColor(Color.WHITE);
+        }else if (jComboBoxGraduacao.getSelectedIndex() <= 16){
+                jTextFieldFaixa.setBackground(new java.awt.Color(1,1,1));
+                jTextFieldFaixa.setSelectedTextColor(Color.WHITE);
+        }else if (jComboBoxGraduacao.getSelectedIndex() <= 19){
+                jTextFieldFaixa.setBackground(new java.awt.Color(205, 92, 92));
+                jTextFieldFaixa.setSelectedTextColor(Color.WHITE);
+        }else{ 
                 jTextFieldFaixa.setBackground(new java.awt.Color(255, 0, 0));
-        }else{
-                jTextFieldFaixa.setBackground(new java.awt.Color(1, 1, 1));
+                jTextFieldFaixa.setSelectedTextColor(Color.WHITE);
         }
-        
     }
 
     @SuppressWarnings("unchecked")
@@ -880,7 +910,7 @@ public class CadastroJudoca extends javax.swing.JFrame {
 
         jLabelGraducao.setText("Graduação:");
 
-        jComboBoxGraduacao.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "6 º Kyu", "5 º Kyu", "4º Kyu", "3º Kyu", "2º Kyu", "1º Kyu", "1º Dan", "2º Dan", "3º Dan", "4º Dan", "5º Dan", "6º Dan", "7º Dan", "8º Dan", "9º Dan", "10º Dan" }));
+        jComboBoxGraduacao.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Iniciante", "11º Kyu", "10º Kyu", "9º Kyu", "8º Kyu", "7º Kyu", "6 º Kyu", "5 º Kyu", "4º Kyu", "3º Kyu", "2º Kyu", "1º Kyu", "1º Dan", "2º Dan", "3º Dan", "4º Dan", "5º Dan", "6º Dan", "7º Dan", "8º Dan", "9º Dan", "10º Dan" }));
         jComboBoxGraduacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxGraduacaoActionPerformed(evt);

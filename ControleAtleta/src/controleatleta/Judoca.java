@@ -12,7 +12,7 @@ public class Judoca extends Atleta {
     private int totalVitorias;
     private int totalEmpates;
     private int totalDerrotas;
-    private String graduacao; //Kyu(6-1) e Dan(1-10)
+    private String graduacao; //Kyu(11-1) e Dan(1-10)
     private String faixa;
 
     public Judoca(String nome) {
@@ -170,34 +170,46 @@ public class Judoca extends Atleta {
         if (graduacao == 0){
             return "Branca";
         }else if(graduacao == 1){
-            return "Branca";
+            return "Branca";   
         }else if(graduacao == 2){
-            return "Branca";
+            return "Cinza";
         }else if(graduacao == 3){
-            return "Branca";
+            return "Cinza";
         }else if(graduacao == 4){
-            return "Branca";
+            return "Azul";
         }else if(graduacao == 5){
-            return "Branca";
+            return "Azul";
         }else if(graduacao == 6){
-            return "Preta";
+            return "Amarela";
         }else if(graduacao == 7){
-            return "Preta";
+            return "Amarela";
         }else if(graduacao == 8){
-            return "Preta";
+            return "Laranja";
         }else if(graduacao == 9){
-            return "Preta";
+            return "Verde";
         }else if(graduacao == 10){
-            return "Preta";
+            return "Roxa";
         }else if(graduacao == 11){
-            return "Preta";
+            return "Marrom";
         }else if(graduacao == 12){
             return "Preta";
         }else if(graduacao == 13){
             return "Preta";
         }else if(graduacao == 14){
-            return "Vermelha";
+            return "Preta";
         }else if(graduacao == 15){
+            return "Preta";
+        }else if(graduacao == 16){
+            return "Preta";
+        }else if(graduacao == 17){
+            return "Vermelha e Branca";
+        }else if(graduacao == 18){
+            return "Vermelha e Branca";
+        }else if(graduacao == 19){
+            return "Vermelha e Branca";
+        }else if(graduacao == 20){
+            return "Vermelha";
+        }else if(graduacao == 21){
             return "Vermelha";
         }else
             return "Branca";

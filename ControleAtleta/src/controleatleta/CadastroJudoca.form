@@ -803,23 +803,29 @@
             <Component class="javax.swing.JComboBox" name="jComboBoxGraduacao">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="16">
-                    <StringItem index="0" value="6 &#xba; Kyu"/>
-                    <StringItem index="1" value="5 &#xba; Kyu"/>
-                    <StringItem index="2" value="4&#xba; Kyu"/>
-                    <StringItem index="3" value="3&#xba; Kyu"/>
-                    <StringItem index="4" value="2&#xba; Kyu"/>
-                    <StringItem index="5" value="1&#xba; Kyu"/>
-                    <StringItem index="6" value="1&#xba; Dan"/>
-                    <StringItem index="7" value="2&#xba; Dan"/>
-                    <StringItem index="8" value="3&#xba; Dan"/>
-                    <StringItem index="9" value="4&#xba; Dan"/>
-                    <StringItem index="10" value="5&#xba; Dan"/>
-                    <StringItem index="11" value="6&#xba; Dan"/>
-                    <StringItem index="12" value="7&#xba; Dan"/>
-                    <StringItem index="13" value="8&#xba; Dan"/>
-                    <StringItem index="14" value="9&#xba; Dan"/>
-                    <StringItem index="15" value="10&#xba; Dan"/>
+                  <StringArray count="22">
+                    <StringItem index="0" value="Iniciante"/>
+                    <StringItem index="1" value="11&#xba; Kyu"/>
+                    <StringItem index="2" value="10&#xba; Kyu"/>
+                    <StringItem index="3" value="9&#xba; Kyu"/>
+                    <StringItem index="4" value="8&#xba; Kyu"/>
+                    <StringItem index="5" value="7&#xba; Kyu"/>
+                    <StringItem index="6" value="6 &#xba; Kyu"/>
+                    <StringItem index="7" value="5 &#xba; Kyu"/>
+                    <StringItem index="8" value="4&#xba; Kyu"/>
+                    <StringItem index="9" value="3&#xba; Kyu"/>
+                    <StringItem index="10" value="2&#xba; Kyu"/>
+                    <StringItem index="11" value="1&#xba; Kyu"/>
+                    <StringItem index="12" value="1&#xba; Dan"/>
+                    <StringItem index="13" value="2&#xba; Dan"/>
+                    <StringItem index="14" value="3&#xba; Dan"/>
+                    <StringItem index="15" value="4&#xba; Dan"/>
+                    <StringItem index="16" value="5&#xba; Dan"/>
+                    <StringItem index="17" value="6&#xba; Dan"/>
+                    <StringItem index="18" value="7&#xba; Dan"/>
+                    <StringItem index="19" value="8&#xba; Dan"/>
+                    <StringItem index="20" value="9&#xba; Dan"/>
+                    <StringItem index="21" value="10&#xba; Dan"/>
                   </StringArray>
                 </Property>
               </Properties>
