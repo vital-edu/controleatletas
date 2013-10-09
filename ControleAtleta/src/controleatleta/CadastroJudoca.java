@@ -61,7 +61,7 @@ public class CadastroJudoca extends javax.swing.JFrame {
         jTextFieldNomePai.setText(null);
         jTextFieldNumero.setText("0");
         jTextFieldPais.setText(null);
-        jTextFieldPeso.setText("0.0");
+        jTextFieldPeso.setText("0");
         jTextFieldRg.setText(null);
         jTextFieldTotalDerrotas.setText("0");
         jTextFieldTotalEmpates.setText("0");
@@ -183,8 +183,8 @@ public class CadastroJudoca extends javax.swing.JFrame {
             return false;
         }
         
-        if(jTextFieldPeso.getText().equals("0")){
-            this.exibirInformacao("O valor do campo 'Peso' nao pode ser igual a 0.");
+        if(Double.parseDouble(jTextFieldPeso.getText()) <= (0)){
+            this.exibirInformacao("O valor do campo 'Peso' nao pode ser menor ou igual 0.");
             jTextFieldPeso.requestFocus();
             return false;
         }
