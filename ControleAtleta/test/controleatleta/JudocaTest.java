@@ -12,7 +12,7 @@ public class JudocaTest {
 
     @Before
     public void setUp() throws Exception {
-        umJudoca = new Judoca('a', 'o', 150.0, 80, 60, 2, 18, "2º Dan", "Joao", 'm');
+        umJudoca = new Judoca('a', 'o', 150.0, 80, 60, 2, 18, "2º Dan", "Joao", 'm',"Preta");
     }
 
     @Test
@@ -108,12 +108,12 @@ public class JudocaTest {
 
     @Test
     public void testGetGraduaçao() {
-        assertEquals("2º Dan", umJudoca.getGraduaçao());
+        assertEquals("2º Dan", umJudoca.getGraduacao());
     }
 
     @Test
     public void testSetGraduaçao() {
-        umJudoca.setGraduaçao("10º Dan");
-        assertEquals(umJudoca.getGraduaçao(), "10º Dan");
+        umJudoca.setGraduacao("10º Dan");
+        assertEquals(umJudoca.getGraduacao(), "10º Dan");
     }
 }
