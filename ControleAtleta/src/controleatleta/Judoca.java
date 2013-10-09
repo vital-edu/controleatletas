@@ -19,6 +19,10 @@ public class Judoca extends Atleta {
         super(nome);
     }
     
+    public Judoca(String nome, char sexo){
+        super(nome, sexo);
+    }
+    
     public Judoca(char categoria, char estilo, Double envergadura, int totalLutas, int totalVitorias, int totalEmpates, int totalDerrotas, String graduacao, String nome, char sexo, String faixa) {
         super(nome, sexo);
         this.categoria = categoria;
